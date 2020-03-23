@@ -8,6 +8,15 @@
 <body>
   <h1>Real-time chat</h1>
 
+  <form name="chat">
+    <label for="username"></label>
+    <input type="text" name="username" placeholder="Username" id="username" aria-label="username" required />
+    <div id="messages"></div>
+    <label for="messageContent"></label>
+    <input type="text" name="messageContent" id="messageContent" placeholder="Message" aria-label="messageContent" />
+    <button type="submit">Send</button>
+  </form>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
   <script src="public/js/scripts.js"></script>
 </body>
