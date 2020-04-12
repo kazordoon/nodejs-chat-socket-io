@@ -4,18 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
   <title>Real-time chat</title>
+  <link rel="stylesheet" href="public/css/styles.css">
 </head>
 <body>
-  <h1>Real-time chat</h1>
-
-  <form name="chat">
-    <label for="username"></label>
-    <input type="text" name="username" placeholder="Username" id="username" aria-label="username" required />
-    <div id="messages"></div>
-    <label for="messageContent"></label>
-    <input type="text" name="messageContent" id="messageContent" placeholder="Message" aria-label="messageContent" />
-    <button type="submit">Send</button>
-  </form>
+  <div class="container">
+    <h1>Real-time chat</h1>
+    <form name="chat" class="border" autocomplete="off">
+      <label for="username"></label>
+      <input type="text" name="username" placeholder="Username" id="username" aria-label="username" required />
+      <div id="messages"></div>
+      <label for="messageContent"></label>
+      <textarea name="messageContent" id="messageContent" placeholder="Message" aria-label="messageContent"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
   <script src="public/js/scripts.js"></script>

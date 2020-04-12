@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  background-color: #e1e1e1;
+}
+
+div.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+div#messages {
+  padding: 5px;
+  text-align: left;
+  border: 1px solid rgba(0, 0, 0, .3);
+  width: 100%;
+  height: 100vh;
+  max-height: 50vh;
+  overflow: auto;
+  margin: 10px auto;
+  box-shadow: 1px 1px 3px #000, -1px -1px 3px #000;
+  word-wrap: break-word;
+}
+
+form {
+  padding: 5px;
+  height: 100%;
+  text-align: center;
+}
+
+form input {
+  font-size: 1.1em;
+}
+
+form input, form textarea {
+  padding: 5px;
+  height: 48px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+form textarea {
+  resize: vertical;
+  font-size: 1.5em;
+}
+
+form button {
+  height: 48px;
+  width: 100%;
+  font-size: 1.5em;
+  font-weight: 500;
+  cursor: pointer;
+}
