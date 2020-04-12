@@ -6,11 +6,12 @@
   "repository": "git@github.com:kazordoon/nodejs-chat-socket-io.git",
   "author": "Felipe Barros <felipetech@tuta.io>",
   "license": "MIT",
-  "scripts" : {
+  "scripts": {
     "start": "node .",
     "dev": "nodemon ."
   },
   "dependencies": {
+    "dotenv-safe": "^8.2.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "socket.io": "^2.3.0"

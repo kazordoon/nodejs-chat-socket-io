@@ -14,6 +14,8 @@ class App {
   settings() {
     this.express.set('views', resolve(__dirname, 'views'));
     this.express.set('view engine', 'ejs');
+
+    this.express.set('HOST', process.env.HOST || 'localhost');
     this.express.set('PORT', process.env.PORT || 3333);
   }
 
