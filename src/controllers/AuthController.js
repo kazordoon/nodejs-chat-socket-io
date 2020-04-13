@@ -1,5 +1,7 @@
 const User = require('../models/User');
 
+const { validateUsername, validatePasswords } = require('../validators/userValidator');
+
 class AuthController {
   renderLogin(req, res) {
     try {
@@ -19,7 +21,7 @@ class AuthController {
 
   async register(req, res) {
     try {
-      const { username, password1: password } = req.body;
+      const { username, password1, password2 } = req.body;
 
       const userExists = await User.findOne({ username });
       if (userExists) {
@@ -27,7 +29,19 @@ class AuthController {
         return res.status(409).render('register');
       }
 
-      await User.create({ username, password });
+      const invalidUsername = !(validateUsername(username));
+      if (invalidUsername) {
+        req.flash('error', 'Invalid username.');
+        return res.status(406).render('register');
+      }
+
+      const invalidPasswords = !(validatePasswords(password1, password2));
+      if (invalidPasswords) {
+        req.flash('error', 'Invalid password.');
+        return res.status(400).render('register');
+      }
+
+      await User.create({ username, password: password1 });
 
       req.flash('success', 'Account created successfully.');
       return res.redirect('/login');
