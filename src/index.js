@@ -1,4 +1,5 @@
 require('dotenv-safe').config();
+require('./database');
 const app = require('./app');
 
 const server = app.listen(app.get('PORT'), () => {
