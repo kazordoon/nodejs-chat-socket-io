@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <title>Login | Real-time chat</title>
+  <link rel="stylesheet" href="public/css/global.css" />
+</head>
+<body>
+  <div class="container login">
+    <% if (messages.error) { %>
+      <div class="alert alert-danger"><%- messages.error %></div>
+    <% } else if (messages.success) { %>
+      <div class="alert alert-success"><%- messages.success %></div>
+    <% } %>
+
+    <form method="POST">
+      <label for="inputUsername"></label>
+      <input type="text" name="username" id="inputUsername" aria-label="username" placeholder="Username" />
+      <label for="inputPassword"></label>
+      <input type="password" name="password" id="inputPassword" aria-label="password" placeholder="Password" />
+      <div>
+        <p>Don't have an account yet ? <a href="/register">Sign up.</a></p>
+      </div>
+      <button type="submit">Sign in</button>
+    </form>
+  </div>
+
+  <script src="public/js/generateError.js"></script>
+  <script src="public/js/login.js"></script>
+</body>
+</html>

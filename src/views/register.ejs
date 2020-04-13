@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <title>Register | Real-time chat</title>
+  <link rel="stylesheet" href="public/css/global.css" />
+</head>
+<body>
+  <div class="container register">
+    <% if (messages.error) { %>
+      <div class="alert alert-danger">
+        <%- messages.error %>
+      </div>
+    <% } %>
+
+    <form method="POST">
+      <div class="form-group">
+        <label for="inputUsername"></label>
+        <input type="text" name="username" id="inputUsername" aria-label="username" placeholder="Username" />
+      </div>
+      <div class="form-group">
+        <label for="inputPassword1"></label>
+        <input type="password" name="password1" id="inputPassword1" aria-label="password1" placeholder="Password" />
+      </div>
+      <div class="form-group">
+        <label for="inputPassword2"></label>
+        <input type="password" name="password2" id="inputPassword2" aria-label="password2" placeholder="Repeat password" />
+      </div>
+      <div>
+        <p>Already have an account ? <a href="/login">Sign in.</a></p>
+      </div>
+      <button type="submit">Sign up</button>
+    </form>
+  </div>
+
+  <script src="public/js/generateError.js"></script>
+  <script src="public/js/register.js"></script>
+</body>
+</html>
