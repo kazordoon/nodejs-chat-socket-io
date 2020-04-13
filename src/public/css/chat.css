@@ -1,20 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Roboto, sans-serif;
-  background-color: #e1e1e1;
-}
-
-div.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 h1 {
   text-align: center;
 }
@@ -47,6 +30,7 @@ form input, form textarea {
   height: 48px;
   width: 100%;
   border-radius: 10px;
+  outline: none;
 }
 
 form textarea {
