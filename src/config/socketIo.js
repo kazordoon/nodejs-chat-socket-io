@@ -6,6 +6,9 @@ module.exports = (server) => {
   io.on('connection', (socket) => {
     console.log(`Socket connected: ${socket.id}`);
 
+    socket.on('onlineUser', (username) => {
+      console.log(`The user "${username}" is online`);
+    });
 
     socket.on('sendMessage', (data) => {
       socket.broadcast.emit('receiveMessage', data);

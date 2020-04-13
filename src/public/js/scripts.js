@@ -3,6 +3,8 @@
 const socket = io.connect('http://localhost:3333');
 
 socket.on('receiveMessage', renderMessage);
+// Testing
+socket.emit('onlineUser', document.querySelector('input[type=hidden]').value);
 
 const form = document.forms['chat'];
 
