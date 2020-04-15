@@ -1,8 +1,10 @@
 // I'm using the host "localhost" and port "3333" as an example
 // you will need to change it
 const socket = io.connect('http://localhost:3333');
+document.querySelector('h1').textContent = 'Loading messages...';
 
 socket.on('receiveMessage', renderMessage);
+socket.on('loadMessages', renderMessages);
 // Testing
 socket.emit('onlineUser', document.querySelector('input[type=hidden]').value);
 
@@ -50,6 +52,29 @@ function renderMessage({ username, message }) {
   messageContainer.appendChild(messageEl);
 
   messagesContainer.appendChild(messageContainer);
+
+  scrollMessages();
+}
+
+function renderMessages(messages) {
+  const messagesContainer = document.querySelector('div#messages');
+
+  messages.map(({ author: username, content: message }) => {
+    const messageContainer = document.createElement('div');
+    const usernameEl = document.createElement('strong');
+    const usernameText = document.createTextNode(username + ': ');
+    usernameEl.appendChild(usernameText);
+
+    const messageEl = document.createElement('span');
+    const messageText = document.createTextNode(message);
+    messageEl.appendChild(messageText);
+
+    messageContainer.appendChild(usernameEl);
+    messageContainer.appendChild(messageEl);
+
+    messagesContainer.appendChild(messageContainer);
+  });
+  document.querySelector('h1').textContent = 'Real-time chat';
 
   scrollMessages();
 }
