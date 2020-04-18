@@ -11,6 +11,8 @@
   <div class="container">
     <h1></h1>
     <form name="chat" class="border" autocomplete="off">
+      <!-- I still need to integrate socket.io with express correctly -->
+      <!-- This field below breaks the application security -->
       <label for="username"></label>
       <input type="hidden" value="<%- user.username %>" name="username" placeholder="Username" id="username" aria-label="username" />
       <div id="messages"></div>

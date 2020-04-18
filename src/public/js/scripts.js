@@ -59,7 +59,7 @@ function renderMessage({ username, message }) {
 function renderMessages(messages) {
   const messagesContainer = document.querySelector('div#messages');
 
-  messages.map(({ author: username, content: message }) => {
+  messages.map(({ user: { username }, content: message }) => {
     const messageContainer = document.createElement('div');
     const usernameEl = document.createElement('strong');
     const usernameText = document.createTextNode(username + ': ');
